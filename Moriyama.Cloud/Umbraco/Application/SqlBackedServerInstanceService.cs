@@ -85,7 +85,7 @@ namespace Moriyama.Cloud.Umbraco.Application
 
                 // do the actual cache refresh here!
                 var users = User.getAll();
-                var admin = users.SingleOrDefault(user => user.UserType.Alias == "admin");
+                var admin = users.FirstOrDefault(user => user.UserType.Alias == "admin");
                 if (admin != null)
                 {
                     var webService = new umbraco.presentation.webservices.CacheRefresher();
